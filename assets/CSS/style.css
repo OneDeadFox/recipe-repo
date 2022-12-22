@@ -62,6 +62,12 @@ aside {
     height: .75em;
 }
 
+#nav-tree {
+    background-color: rgb(189, 203, 32);
+    width: 80%;
+    height: 60%;
+}
+
 /*#endregion Aside*/
 
 /*#region Main*/
