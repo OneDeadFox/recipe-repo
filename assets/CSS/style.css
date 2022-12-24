@@ -1,3 +1,12 @@
+:root {
+    --bg-contrast: #eeeee4;
+    --bg-color: #fafaf4;
+    --green-accent: #EAF3D8;
+    --blue-accent: #E6EAFB;
+    --brown-accent: #D5C59B;
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +15,7 @@
 }
 
 body {
+    background-color: var(--bg-color);
     display: grid;
     grid-template-areas: 
         "head head head"
@@ -21,7 +31,8 @@ header {
     /* background: url(https://onedeadfox.github.io/recipe-repo/assets/images/banner-bg.jpg) no-repeat; */
     /* background-size: 100%;
     background-position-y: -100px; */
-    background-color: aquamarine;
+    background-color: var(--bg-color);
+    border-bottom: 8px solid var(--green-accent);
     width: auto;
     height: auto;
     grid-area: head;
@@ -30,41 +41,39 @@ header {
 h1 {
     font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
     font-size: 350%;
-    text-shadow: 2px 2px 2px white, 2px -2px 2px white, -2px 2px 2px white, -2px -2px 2px white;
-    padding-left: 1.5%;
+   /* text-shadow: 2px 2px 2px white, 2px -2px 2px white, -2px 2px 2px white, -2px -2px 2px white; */
+    padding-left: .25em;
 }
 /*#endregion Header*/
 
 /* #region Aside */
 aside {
-    background-color: violet;
-    width: auto;
-    height:auto;
-    grid-area: aside;
+    background-color: var(--bg-contrast);
+    width: 16em;
+    height: 60em;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .head-chef {
-    background-color: aqua;
+    background-color:black;
     width: 80%;
     height: 12em;
+    margin-top: 1em;
     border-radius: 15%;
-    
     
 }
 
 .drop-down {
-    background-color: white;
+    background-color: var(--bg-contrast);
     width: 100%;
     height: .75em;
 }
 
 #nav-tree {
-    background-color: rgb(189, 203, 32);
-    width: 80%;
+    background-color: white;
+    width: 90%;
     height: 60%;
 }
 
@@ -72,7 +81,7 @@ aside {
 
 /*#region Main*/
 main {
-    background-color: red;
+    background-color: var(--bg-color);
     width: auto;
     height:auto;
     grid-area: main;
@@ -82,23 +91,86 @@ main {
 }
 
 nav {
-    background-color: pink;
-    width: auto;
+    background-color: var(--bg-contrast);
+    width: 100%;
     height: 2.5em;
+    border-bottom: 5px solid var(--green-accent);
+    display: flex;
+    position:absolute;
 }
 
+#add-button {
+    background-color: var(--bg-color);
+    width: 1.75em;
+    height: 1.75em;
+    align-self: center;
+    position:absolute;
+    left: 11em;
+    border: 2px solid var(--bg-color);
+    border-radius: 100%;
+    display: flex;
+    transition: all 100ms linear 50ms ;
+}
+
+.cross-h {
+    background-color: var(--green-accent);
+    width: 1.25em;
+    height: .25em;
+    border-radius: 2px;
+    position: absolute;
+    top: 10px;
+    left: 2px;
+}
+
+.cross-v {
+    background-color: var(--green-accent);
+    width: .25em;
+    height: 1.25em;
+    border-radius: 2px;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+}
+
+#add-button:hover {
+    border: 2px solid white;
+    background-color: white;
+}
+
+.tab {
+    background-color: white;
+    width: 10em;
+    height: 1.5em;
+    position: absolute;
+    bottom: -5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 100ms linear 50ms ;
+}
+
+.tab:hover {
+    height: 1.65em;
+    background-color: var(--bg-color);
+}
+
+
 .display {
-    background-color: blue;
-    min-height: 30em;
+    background-color: white;
+    min-height: 60em;
     margin-right: 5em;
 
 }
 
 /*#endregion Main*/
 
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
 /*#region Footer*/
 footer {
-    background-color: purple;
+    background-color: var(--bg-color);
     width: auto;
     height:auto;
     grid-area: foot;
