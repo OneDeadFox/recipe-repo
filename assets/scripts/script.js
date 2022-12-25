@@ -50,8 +50,8 @@ let crossWidth = 80;
 
 let leftCross = document.createElement("div");
 let rightCross = document.createElement("div");
-leftCross.setAttribute("id", "left-cross");
-rightCross.setAttribute("id", "right-cross");
+leftCross.setAttribute("id", "left-cross", "class", "rip");
+rightCross.setAttribute("id", "right-cross", "class", "rip");
 let wrapping = document.getElementById("giftwrap");
 wrapping.appendChild(leftCross);
 wrapping.appendChild(rightCross);
@@ -78,6 +78,12 @@ page.addEventListener("click", function(event) {
         newTabGen();
     } else if (element.matches(".tab")){
         activateTab();
+    } if (element.matches(".rip")){
+        console.log("test");
+        var rips = document.querySelectorAll(".rip")
+        for(var i = 0; i < 2; i++){
+            rips[i].setAttribute("style", "display:none")
+        }
     }
 
 
