@@ -1,9 +1,11 @@
 :root {
-    --bg-contrast: #eeeee4;
-    --bg-color: #fafaf4;
-    --green-accent: #EAF3D8;
+
+    --bg-color: #dddbd4;
+    --bg-contrast: #f4f4ee;
+    --green-accent: #f3ffdb;
+    --dark-green: #B3BDA1;
     --blue-accent: #E6EAFB;
-    --brown-accent: #D5C59B;
+    --edge-color: #e6dcae;
 
 }
 
@@ -14,8 +16,26 @@
     box-sizing: border-box;
 }
 
+#giftwrap {
+    background-color: green;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+}
+
+#left-cross {
+    background-color: red;
+    width: 5em;
+    height: 100vh;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 6;
+}
+
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-contrast);
     display: grid;
     grid-template-areas: 
         "head head head"
@@ -32,10 +52,13 @@ header {
     /* background-size: 100%;
     background-position-y: -100px; */
     background-color: var(--bg-color);
-    border-bottom: 8px solid var(--green-accent);
+    border-bottom: 8px solid var(--edge-color);
+    box-shadow: 0px 2px 5px #555555;
     width: auto;
     height: auto;
+    margin-bottom: 4px;
     grid-area: head;
+    z-index: 2;
 }
 
 h1 {
@@ -58,7 +81,7 @@ aside {
 
 .head-chef {
     background-color:black;
-    width: 80%;
+    width: 90%;
     height: 12em;
     margin-top: 1em;
     border-radius: 15%;
@@ -84,6 +107,7 @@ main {
     background-color: var(--bg-color);
     width: auto;
     height:auto;
+    border-bottom: 8px solid var(--edge-color);
     grid-area: main;
     display: flex;
     flex-direction: column;
@@ -94,7 +118,7 @@ nav {
     background-color: var(--bg-contrast);
     width: 100%;
     height: 2.5em;
-    border-bottom: 5px solid var(--green-accent);
+    border-bottom: 5px solid var(--edge-color);
     display: flex;
     position:absolute;
 }
@@ -113,7 +137,7 @@ nav {
 }
 
 .cross-h {
-    background-color: var(--green-accent);
+    background-color: var(--dark-green);
     width: 1.25em;
     height: .25em;
     border-radius: 2px;
@@ -123,7 +147,7 @@ nav {
 }
 
 .cross-v {
-    background-color: var(--green-accent);
+    background-color: var(--dark-green);
     width: .25em;
     height: 1.25em;
     border-radius: 2px;
@@ -143,21 +167,36 @@ nav {
     height: 1.5em;
     position: absolute;
     bottom: -5px;
+    border: 2px solid whitesmoke;
+    border-bottom: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transition: all 100ms linear 50ms ;
 }
 
-.tab:hover {
-    height: 1.65em;
+[data-state="inactive"] {
     background-color: var(--bg-color);
+    border: 2px solid var(--bg-contrast);
+    border-bottom: none;
+}
+/* box shadow rather than border color */
+/* dim current active on hover */
+[data-state="inactive"]:hover {
+    height: 1.65em;
+    border: 2px solid rgb(247, 246, 242);
+    border-bottom: none;
+    background-color: white;
 }
 
-
+/* round top-right and bottom-right corners */
 .display {
     background-color: white;
     min-height: 60em;
     margin-right: 5em;
+    margin-top: 2.5em;
+    box-shadow: 3px 3px 3px #555555;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 
 }
 
@@ -178,4 +217,67 @@ footer {
 /*#endregion Footer*/
 
 
+/*#region Breakpoints*/
+@media screen and (max-width: 992px) {
 
+}
+
+@media screen and (max-width: 768px) {  
+    body {
+        grid-template-areas: 
+            "head"
+            "main"
+            "foot";
+        grid-template-rows: 5em auto auto 3em ;
+        grid-template-columns: 16em auto auto;
+    }
+
+    header {
+        width: 100%;
+        height: 5em;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    main {
+        width: 100%;
+        height: 60em;
+        position: absolute;
+        top: 5em;
+        left: 0;
+    }
+
+    #navbar {
+        width: 100%;
+        padding-left: 1em;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #add-button {
+        left: 12em
+    }
+
+    .display {
+        width: 95%;
+        position: absolute;
+        left: 1em;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+
+    footer {
+        width: 100%;
+        height: 3em;
+        position: absolute;
+        top: 70em;
+    }
+
+    #sidebar {
+        display: none;
+    }
+}
+/*#endregion Breakpoints*/
