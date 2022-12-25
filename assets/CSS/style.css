@@ -281,7 +281,7 @@ footer {
     }
 
     h1 {
-        font-size: 5vh;
+        font-size: 2vh;
         align-self: center;
         justify-self left;
     }
@@ -295,7 +295,7 @@ footer {
 
     .head-chef h3 {
         display: block;
-        font-size: 5vh;
+        font-size: 1vh;
         font-family:  Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
         position: absolute;
         left: -7em;
