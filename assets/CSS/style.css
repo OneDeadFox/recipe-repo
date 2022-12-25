@@ -220,6 +220,25 @@ nav {
 
 }
 
+.display img {
+    width: 28%;
+    height: auto;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.display p{
+    margin: 2%;
+    font-size: 175%;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.display ul {
+    margin: 2%;
+    margin-left: 8%;
+    font-size: 150%;
+}
 /*#endregion Main*/
 
 .sticky {
@@ -262,7 +281,7 @@ footer {
     }
 
     h1 {
-        font-size: 250%;
+        font-size: 5vh;
         align-self: center;
         justify-self left;
     }
@@ -276,7 +295,7 @@ footer {
 
     .head-chef h3 {
         display: block;
-        font-size: 200%;
+        font-size: 5vh;
         font-family:  Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
         position: absolute;
         left: -7em;
