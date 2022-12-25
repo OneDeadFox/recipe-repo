@@ -55,10 +55,10 @@ rightCross.setAttribute("id", "right-cross");
 let wrapping = document.getElementById("giftwrap");
 wrapping.appendChild(leftCross);
 wrapping.appendChild(rightCross);
-document.querySelector("#left-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(${Math.atan2(p1.y - p3.y*1.118, p1.x - p3.x)*180}deg)`;
-document.querySelector("#right-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(${Math.atan2(p3.y*1.118 - p1.y, p1.x - p3.x)*180}deg)`;
+document.querySelector("#left-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(${Math.atan(p3.x/p3.y)*(180/Math.PI)}deg)`;
+document.querySelector("#right-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(-${Math.atan(p3.x/p3.y)*(180/Math.PI)}deg)`;
 
-
+console.log(p3.y/p3.x*360)
 // let leftCross = document.createElement("div");
 // leftCross.setAttribute("id", "left-cross");
 
