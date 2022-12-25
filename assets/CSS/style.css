@@ -16,14 +16,14 @@
     box-sizing: border-box;
 }
 
-/* #giftwrap {
+#giftwrap {
     background-color: green;
     position: absolute;
     width: 100%;
     height: 100vh;
     z-index: 5;
     overflow: hidden;
-} */
+}
 
 #left-cross {
     background-color: red;
@@ -90,7 +90,7 @@ aside {
     margin-top: 1em;
     border-radius: 15%;
     grid-area: "pic";
-    z-index: 4;
+    z-index: 3;
     
 }
 
@@ -154,6 +154,7 @@ nav {
     border-radius: 100%;
     display: flex;
     transition: all 100ms linear 50ms ;
+    z-index: 4;
 }
 
 .cross-h {
@@ -221,7 +222,7 @@ nav {
 }
 
 .display img {
-    width: 28%;
+    width: 47%;
     height: auto;
     margin-left: 2%;
     margin-top: 2%;

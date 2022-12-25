@@ -61,7 +61,7 @@ function wrap(){
     document.querySelector("#right-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(-${Math.atan(p3.x/p3.y)*(180/Math.PI)}deg)`;
 }
 
-//wrap();
+wrap();
 
 
 //#region The Delegator
