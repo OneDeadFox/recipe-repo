@@ -16,14 +16,14 @@
     box-sizing: border-box;
 }
 
-#giftwrap {
+/* #giftwrap {
     background-color: green;
     position: absolute;
     width: 100%;
     height: 100vh;
     z-index: 5;
     overflow: hidden;
-}
+} */
 
 #left-cross {
     background-color: red;
@@ -59,6 +59,7 @@ header {
     height: auto;
     margin-bottom: 4px;
     grid-area: head;
+    display: flex;
     z-index: 2;
 }
 
@@ -81,11 +82,20 @@ aside {
 }
 
 .head-chef {
-    background-color:black;
+    background-image: url(https://onedeadfox.github.io/recipe-repo/assets/images/gma.png);
+    background-size: 15em;
+    background-position-y: -60px;
     width: 90%;
     height: 12em;
     margin-top: 1em;
     border-radius: 15%;
+    grid-area: "pic";
+    z-index: 4;
+    
+}
+
+.head-chef h3 {
+    display: none;
     
 }
 
@@ -93,6 +103,15 @@ aside {
     background-color: var(--bg-contrast);
     width: 100%;
     height: .75em;
+        font-size: larger;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        z-index: 4
+}
+
+.drop-down h3 {
+    font-family:  Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
 }
 
 #nav-tree {
@@ -227,6 +246,7 @@ footer {
     body {
         grid-template-areas: 
             "head"
+            "pic"
             "main"
             "foot";
         grid-template-rows: 5em auto auto 3em ;
@@ -241,11 +261,33 @@ footer {
         left: 0px;
     }
 
+    h1 {
+        font-size: 250%;
+        align-self: center;
+        justify-self left;
+    }
+
+    .head-chef  {
+        position: absolute;
+        width: 14em;
+        top: 4.5em;
+        right: 1em;
+    }
+
+    .head-chef h3 {
+        display: block;
+        font-size: 200%;
+        font-family:  Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
+        position: absolute;
+        left: -7em;
+        top: 2.5em;
+    }
+
     main {
         width: 100%;
         height: 60em;
         position: absolute;
-        top: 5em;
+        top: 16em;
         left: 0;
     }
 
@@ -277,8 +319,17 @@ footer {
         top: 70em;
     }
 
-    #sidebar {
+    .drop-down {
         display: none;
+    }
+
+    .nav-tree {
+        display: none;
+    }
+
+    #sidebar {
+        width:auto;
+        height:auto;
     }
 }
 /*#endregion Breakpoints*/

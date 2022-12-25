@@ -41,27 +41,27 @@ let tabID = 0;
 //Positioning
 
 
+
 //Wrapping Paper Section
-let p1 = {x: 0, y: 0};
-let p2 = {x: window.innerWidth, y: 0};
-let p3 = {x: window.innerWidth, y: window.innerHeight};
-let p4 = {x: 0, y: window.innerHeight};
-let crossWidth = 80;
+function wrap(){
+    let p1 = {x: 0, y: 0};
+    let p2 = {x: window.innerWidth, y: 0};
+    let p3 = {x: window.innerWidth, y: window.innerHeight};
+    let p4 = {x: 0, y: window.innerHeight};
+    let crossWidth = 80;
 
-let leftCross = document.createElement("div");
-let rightCross = document.createElement("div");
-leftCross.setAttribute("id", "left-cross", "class", "rip");
-rightCross.setAttribute("id", "right-cross", "class", "rip");
-let wrapping = document.getElementById("giftwrap");
-wrapping.appendChild(leftCross);
-wrapping.appendChild(rightCross);
-document.querySelector("#left-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(${Math.atan(p3.x/p3.y)*(180/Math.PI)}deg)`;
-document.querySelector("#right-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(-${Math.atan(p3.x/p3.y)*(180/Math.PI)}deg)`;
+    let leftCross = document.createElement("div");
+    let rightCross = document.createElement("div");
+    leftCross.setAttribute("id", "left-cross", "class", "rip");
+    rightCross.setAttribute("id", "right-cross", "class", "rip");
+    let wrapping = document.getElementById("giftwrap");
+    wrapping.appendChild(leftCross);
+    wrapping.appendChild(rightCross);
+    document.querySelector("#left-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(${Math.atan(p3.x/p3.y)*(180/Math.PI)}deg)`;
+    document.querySelector("#right-cross").style.cssText = `background-color: red; width: ${crossWidth}px; height: ${window.innerHeight}px; position:absolute; top:; left:${window.innerWidth/2 - crossWidth/2}px; z-index: 6; transform: skewX(-${Math.atan(p3.x/p3.y)*(180/Math.PI)}deg)`;
+}
 
-console.log(p3.y/p3.x*360)
-// let leftCross = document.createElement("div");
-// leftCross.setAttribute("id", "left-cross");
-
+//wrap();
 
 
 //#region The Delegator
